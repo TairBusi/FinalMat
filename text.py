@@ -1,4 +1,17 @@
-
+def revword(str):
+     return str[::-1].lower()
+ 
+def countword() :
+    count=1
+    myFile=open("text.txt","r")
+    myListedFile=myFile.readlines()
+    word=myListedFile[0].lower().strip()
+    for line in myListedFile[1:]:
+        for myWord in line.split():
+            if revword(myWord).strip() == word:
+                count+=1
+    return count
+'''
 def revword(word:str) -> str:
     word=list(word)
     new_word=[]
@@ -26,7 +39,7 @@ def countword()->int:
 
 print(countword())
 
-'''
+
 def revword(word:str) -> str:
     word=list(word)
     new_word=[]
